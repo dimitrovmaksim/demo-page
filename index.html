@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app="example-app">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Mitr" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body ng-controller="ExampleController as example" ng-click="$event.stopPropagation()">
+    <div class="page-wrapper" ng-click="hideSidebar();">
+      <div class="sidebar" ng-click="$event.stopPropagation();">
+        <ul>
+          <li><a>test</a></li>
+          <li><a>test</a></li>
+        </ul>
+      </div>
+      <div class="main-wrapper">
+        <div class="header">
+          <div class="head1"></div>
+          <div class="head2">
+            <a href="#a">About</a>
+            <a href="#a">Projects</a>
+            <a href="#a">Gallery</a>
+            <a href="#a">Contacts</a>
+          </div>
+          <div class="head3">
+            <i class="fa fa-facebook icon" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-google-plus" aria-hidden="true"></i>
+            <i class="fa fa-bars" aria-hidden="true" ng-click="clickFunction(); $event.stopPropagation();"></i>
+          </div>
+        </div>
+        <div class="main-page">
+          <div class="f1" ng-click="isEnabled && allWhite()">
+            <i class="fa fa-info-circle fa-5x"></i>
+            <span class='label'>About</span>
+          </div>
+          <div class="f2" ng-click="isEnabled && toggleGallery()">
+            <i class="fa fa-camera-retro fa-5x"></i>
+            <span class='label'>Galery</span>
+            <div ng-repeat="picture in pictures" class="image">
+              <img ng-src="{{picture.url}}" alt="missing">
+            </div>
+          </div>
+          <div class="f3" ng-click="isEnabled && allGreyL()">
+            <i class="fa fa-users fa-5x"></i>
+            <span class='label'>Team</span>
+          </div>
+          <div class="f4" ng-click="isEnabled && allGreyD()">
+            <i class="fa fa-address-book fa-5x"></i>
+            <span class='label'>Contacts</span>
+          </div>
+        </div>
+        <footer>
+        </footer>
+      </div>
+    </div>
+  </body>
+
+
+
+</html>
